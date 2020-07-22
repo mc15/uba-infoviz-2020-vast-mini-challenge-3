@@ -19,6 +19,9 @@
 
         <style type="text/css">
             /* Estos son los estilos que están en la parte de abajo del observable */
+            .selected-node {
+                stroke: #000;
+            }
         </style>
     </head>
     <body class="container">
@@ -81,6 +84,7 @@
                 </div>
             </div>
             
+            <div class="observablehq-updateSelectedNodes" style="display: none;"></div>
             <div style="overflow: hidden;"><a style="display: block; float:right;" href="https://observablehq.com/@mc15/uba-infoviz-2020-vast-mini-challenge-3"><object type="image/svg+xml" style="pointer-events: none;" width=180 height=22 data="https://static.observableusercontent.com/files/c3fab254a006f1a3a1f9f63aba8ab1460db4752529036b9962950bde0ec195bab823daa6b278b1c3401e545b3bd640ddfdcad805cf9859af218cb2b9fed4ddf0"></object></a></div>
         </div>
         <script type="module">
@@ -99,6 +103,8 @@
               if (name === "viewof selectedLocations") return Inspector.into("#observablehq-e862416e .observablehq-viewof-selectedLocations")();
               if (name === "linePlotLegend") return Inspector.into("#observablehq-e862416e .observablehq-linePlotLegend")();
               if (name === "linePlotLoadByLocation") return Inspector.into("#observablehq-e862416e .observablehq-linePlotLoadByLocation")();
+              
+              if (name === "updateSelectedNodes") return Inspector.into("#observablehq-e862416e .observablehq-updateSelectedNodes")();
             });
         </script>
   </body>
