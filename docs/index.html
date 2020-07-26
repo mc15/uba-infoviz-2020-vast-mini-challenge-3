@@ -37,7 +37,7 @@
             }
         </style>
     </head>
-    <body class="container">
+    <body class="">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard estado de la red y fallas</h1>
         </div>
@@ -184,6 +184,11 @@
               
               if (name === "updateSelectedNodes") return Inspector.into("#observablehq-e862416e .observablehq-updateSelectedNodes")();
             });
+
+            window.onload = function() {
+                // Si está en un iframe usamos la clase "container-fluid" para que tome el espacio de todo el container.
+                document.getElementsByTagName("body")[0].setAttribute("class", window.self !== window.top ? "container-fluid" : "container");
+            };
         </script>
   </body>
 </html>
