@@ -38,7 +38,7 @@
         </style>
     </head>
     <body class="">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <div id="title" class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard estado de la red y fallas</h1>
         </div>
 
@@ -186,8 +186,14 @@
             });
 
             window.onload = function() {
+                var isInIframe = window.self !== window.top;
                 // Si está en un iframe usamos la clase "container-fluid" para que tome el espacio de todo el container.
-                document.getElementsByTagName("body")[0].setAttribute("class", window.self !== window.top ? "container-fluid" : "container");
+                document.getElementsByTagName("body")[0].setAttribute("class", isInIframe ? "container-fluid" : "container");
+
+                if(isInIframe) {
+                    document.getElementById("title").remove();
+                }
+                
             };
         </script>
   </body>
